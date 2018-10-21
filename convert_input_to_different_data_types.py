@@ -12,4 +12,3 @@ print("myint is : ", myint) # Display the value of myint
 print("myfloat is : ", myfloat) # Display the value of myfloat
 print("myint + myfloat is : ", myint+myfloat) # Add myint and myfloat and display
 print("myint + myfloat as an integer is : ", int(myint+myfloat)) # Add myint and myfloat, convert to an integer and display
-
