@@ -28,7 +28,7 @@ print(things[2])
 print(things[2][2])
 
 #Lists can be added and multiplied in the same way as strings.
-For example:
+#For example:
 nums = [1, 2, 3]
 print(nums + [4, 5, 6]) #[1, 2, 3, 4, 5, 6]
 print(nums * 3) #[1, 2, 3, 1, 2, 3, 1, 2, 3]
@@ -53,11 +53,11 @@ print(letters.index('r'))#2
 print(letters.index('p'))#0
 print(letters.index('z'))#ValueError: 'z' is not in list
 # There are a few more useful functions and methods for lists. 
-max(list): Returns the list item with the maximum value
-min(list): Returns the list item with minimum value
-list.count(obj): Returns a count of how many times an item occurs in a list
-list.remove(obj): Removes an object from a list
-list.reverse(): Reverses objects in a list
+max(list) # Returns the list item with the maximum value
+min(list) #Returns the list item with minimum value
+list.count(obj) # Returns a count of how many times an item occurs in a list
+list.remove(obj) #Removes an object from a list
+list.reverse() # Reverses objects in a list
 
 #Range
 
