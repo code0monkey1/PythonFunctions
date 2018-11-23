@@ -1,0 +1,4 @@
+The contents of this 
+file are used as 
+a sample for 
+file IO
