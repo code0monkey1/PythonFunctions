@@ -128,3 +128,33 @@ with open("out.txt") as fe:
  	print(fe.read())
 
 #The file is automatically closed at the end of the with statement, even if exceptions occur within it.
+
+'''
+Text Analyzer
+
+This is an example project, 
+showing a program that analyzes a sample file to find what percentage of the text each character occupies.
+'''
+def count_char(text, char):
+  count = 0
+  for c in text:
+    if c == char:
+      count += 1
+  return count
+
+filename = input("Enter a filename: ")
+with open(filename) as f:
+  text = f.read()
+
+for char in "abcdefghijklmnopqrstuvwxyz":
+  perc = 100 * count_char(text, char) / len(text)
+  print("{0} - {1}%".format(char, round(perc, 2)))
+'''
+
+Result:
+Enter a filename: test.txt
+a - 4.68%
+b - 4.94%
+c - 2.28%
+...
+'''
