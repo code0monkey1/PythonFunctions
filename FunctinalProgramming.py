@@ -17,3 +17,16 @@ print(polynomial(-4))
 #equavalent lambda
 print((lambda x: x**2 + 5*x + 4) (-4))
 
+'''
+Lambda functions can be assigned to variables, and used like normal functions.
+Example:'''
+double = lambda x: x * 2
+print(double(7))
+'''Result: 
+>>>
+14
+>>>
+'''
+#However, there is rarely a good reason to do this - it is usually better to define a function with def instead.
+
+
