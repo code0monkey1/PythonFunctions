@@ -36,3 +36,4 @@ print_text()
 
 #This will have the same result as the above code.
 #A single function can have multiple decorators.
+
