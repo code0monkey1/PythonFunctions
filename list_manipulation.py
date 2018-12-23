@@ -196,7 +196,14 @@ Result:
 
 # Ans : a = [i for i in range(20) ifi%3==0]
 
+# Create a list which has pairs of x , y , z in which they don't add up to n
+x=10
+y=10
+z=10
+n=30
+[ [i,j,k]for i in range(x+1) for j in range(y+1) for k in range(z+1) if (i+j+k!=n) ]
 
+#Answer  : this will create a list that has pairs whose sum is not equal to n 
 '''Trying to create a list in a very extensive range will result in a MemoryError.
 This code shows an example where the list comprehension runs out of memory.'''
 even = [2*i for i in range(10**100)]
