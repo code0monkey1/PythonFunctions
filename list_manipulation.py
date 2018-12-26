@@ -6,9 +6,9 @@ bucket = []  # Create an empty list called 'bucket'
 # Ask for input before loop
 choice = input('Enter selection: e(X)it, (A)dd, (L)ist (R)emove...')
 while choice != 'X':  # This loop will continue until 'X' is entered
-if choice == 'A':
-  print('Enter list item... ')
-  newitem = input()
+  if choice == 'A':
+    print('Enter list item... ')
+    newitem = input()
         bucket.append(newitem)  # Add 'newItem' to the list called 'bucket'
       elif choice == 'L':
         for item in bucket: # This loop continues for however many items are in the list
@@ -273,3 +273,15 @@ At least one is even
 (4, 11)
 >>>
 '''
+# To delete an element from a list we use the del keyword , specifying the list name and index number 
+
+# eg : delete 2nd element from list  L 
+
+L =[ ' hello' , 'this ','is']
+del L[1]
+print(L) # this would give ['hello','is']
+
+# You could convert any value to a list 
+# example  a string s="hello" could be turned into a list by this :
+s='hello'
+L = list(s)  # this would give a list L = ['h','e','l','l','o']
