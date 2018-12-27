@@ -285,3 +285,81 @@ print(L) # this would give ['hello','is']
 # example  a string s="hello" could be turned into a list by this :
 s='hello'
 L = list(s)  # this would give a list L = ['h','e','l','l','o']
+
+
+#List concatenation
+
+catNames = []
+while True:
+    print('Enter the name of cat ' + str(len(catNames) + 1) +
+      ' (Or enter nothing to stop.):')
+    name = input()
+    if name == '':
+        break
+    catNames = catNames + [name] # list concatenation
+print('The cat names are:')
+for name in catNames:
+    print('  ' + name)
+
+''' When you run the program , the result is : 
+
+Enter the name of cat 1 (Or enter nothing to stop.):
+Zophie
+Enter the name of cat 2 (Or enter nothing to stop.):
+Pooka
+Enter the name of cat 3 (Or enter nothing to stop.):
+Simon
+Enter the name of cat 4 (Or enter nothing to stop.):
+Lady Macbeth
+Enter the name of cat 5 (Or enter nothing to stop.):
+Fat-tail
+Enter the name of cat 6 (Or enter nothing to stop.):
+Miss Cleo
+Enter the name of cat 7 (Or enter nothing to stop.):
+
+The cat names are:
+  Zophie
+  Pooka
+  Simon
+  Lady Macbeth
+  Fat-tail
+  Miss Cleo
+  '''
+
+ls=[]
+
+ls+=['chiranjeev']
+ls+=['thomas']
+
+print(ls)
+
+lsm=[]
+lsm+=['chiranjeev']
+lsm+=['thomas']
+print(lsm)
+
+print(lsm==ls)
+
+# Sorting 
+
+# Third, sort() uses “ASCIIbetical order” rather 
+# than actual alphabetical order for sorting strings. 
+# This means uppercase letters come before lowercase letters. 
+# Therefore, the lowercase a is sorted so that it comes after the uppercase Z. 
+# For an example, enter the following into the interactive shell:
+
+
+>>> spam = ['Alice', 'ants', 'Bob', 'badgers', 'Carol', 'cats']
+>>> spam.sort()
+>>> spam
+['Alice', 'Bob', 'Carol', 'ants', 'badgers', 'cats']
+# If you need to sort the values in regular alphabetical order,
+#  pass str. lower for the key keyword argument in the sort() method call.
+
+
+>>> spam = ['a', 'z', 'A', 'Z']
+>>> spam.sort(key=str.lower)
+>>> spam
+['a', 'A', 'z', 'Z']
+# This causes the sort() method to treat all the items in the list as if
+#  they were lowercase without actually changing the values in the list.

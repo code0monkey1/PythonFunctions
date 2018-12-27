@@ -33,11 +33,10 @@ def dividebyz( number ):
 	except ZeroDivisionError:  # keeping this as ' except : 'without any arguments catches all exceptions
 		print("this is an invalid division")
 
+# The guessing game
 
 	class guessingGame:
-		def __init__(self, numero, number):
-			self.numero=0
-			self.number=0
+	
 
 		def inputNumber():
 			global numero , number
@@ -62,4 +61,7 @@ def dividebyz( number ):
 			return numero==number
 
 
-	guessingGame.startgame()
+	#guessingGame.startgame()
+
+ 
+
