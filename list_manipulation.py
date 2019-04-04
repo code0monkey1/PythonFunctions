@@ -363,3 +363,11 @@ print(lsm==ls)
 ['a', 'A', 'z', 'Z']
 # This causes the sort() method to treat all the items in the list as if
 #  they were lowercase without actually changing the values in the list.
+
+# Copy and DeepCopy
+
+cheese = copy.copy(spam) #n creates a second list that can be modified independently of the first.
+
+# If the list you need to copy contains lists, then use the
+#  copy.deepcopy() function instead of copy.copy(). The deepcopy() function 
+#  ill copy these inner lists as well.
