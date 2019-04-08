@@ -1,16 +1,20 @@
 '''__init__
 
 The __init__ method is the most important method in a class. 
-This is called when an instance (object) of the class is created, using the class name as a function.
+This is called when an instance (object) of the class is created, using the class name
+ as a function.
 
 All methods must have self as their first parameter, although it isn't explicitly passed,
- Python adds the self argument to the list for you; you do not need to include it when you call the methods.
+ Python adds the self argument to the list for you; you do not need to include it when 
+ you call the methods.
   Within a method definition, self refers to the instance calling the method.
 
 Instances of a class have attributes, which are pieces of data associated with them.
-In this example, Cat instances have attributes color and legs. These can be accessed by putting a dot,
+In this example, Cat instances have attributes color and legs. These can be accessed 
+by putting a dot,
  and the attribute name after an instance. 
-In an __init__ method, self.attribute can therefore be used to set the initial value of an instance's attributes.
+In an __init__ method, self.attribute can therefore be used to set the initial value 
+of an instance's attributes.
 Example:
 '''
 class Cat:
@@ -27,11 +31,33 @@ Result:
 ginger
 >>>
 
-In the example above, the __init__ method takes two arguments and assigns them to the object's attributes.
+** New attributes can be defined anywere , 
+even if it's not defined in the class initally
+
+eg 
+class A : 
+  def __init__ (self,A,B):
+    self.a=A
+    self.b=B
+
+myClass = A(2,4)
+
+print(myClass.a) // prints 2
+print(myClass.b) // prints 4
+
+myClass.c=12
+
+print(myClass.c) // will print 12 
+**
+
+In the example above, the __init__ method takes two arguments
+ and assigns them to the object's attributes.
  The __init__ method is called the class constructor.
 '''
 
-'''Classes can also have class attributes, created by assigning variables within the body of the class. These can be accessed either from instances of the class, or the class itself.
+'''Classes can also have class attributes, created by assigning variables 
+within the body of the class. These can be accessed either from instances of the class,
+ or the class itself.
 Example:'''
 class Dog:
   legs = 4
@@ -44,7 +70,8 @@ print(fido.legs)
 print(Dog.legs)
 #Class attributes are shared by all instances of the class.
 
-'''Trying to access an attribute of an instance that isn't defined causes an AttributeError. This also applies when you call an undefined method.
+'''Trying to access an attribute of an instance that isn't defined 
+causes an AttributeError. This also applies when you call an undefined method.
 
 Example:'''
 class Rectangle: 
@@ -65,9 +92,14 @@ AttributeError: 'Rectangle' object has no attribute 'color'
 '''Inheritance
 
 Inheritance provides a way to share functionality between classes. 
-Imagine several classes, Cat, Dog, Rabbit and so on. Although they may differ in some ways (only Dog might have the method bark), they are likely to be similar in others (all having the attributes color and name). 
-This similarity can be expressed by making them all inherit from a superclass Animal, which contains the shared functionality. 
-To inherit a class from another class, put the superclass name in parentheses after the class name.
+Imagine several classes, Cat, Dog, Rabbit and so on. 
+Although they may differ in some ways (only Dog might
+ have the method bark), they are likely to be similar in others 
+ (all having the attributes color and name). 
+This similarity can be expressed by making them all inherit
+ from a superclass Animal, which contains the shared functionality. 
+To inherit a class from another class, put the superclass name 
+in parentheses after the class name.
 Example:'''
 class Animal: 
   def __init__(self, name, color):
@@ -124,7 +156,8 @@ Woof
 
 '''
 
-'''Inheritance can also be indirect. One class can inherit from another, and that class can inherit from a third class. 
+'''Inheritance can also be indirect. One class can inherit from another, and that 
+class can inherit from a third class. 
 Example:'''
 
 class A:
@@ -155,7 +188,9 @@ C method
 #However, circular inheritance is not possible.
 
 
-'''The function super is a useful inheritance-related function that refers to the parent class. It can be used to find the method with a certain name in an object's superclass.
+'''The function super is a useful inheritance-related function 
+that refers to the parent class. It can be used to find the method
+ with a certain name in an object's superclass.
 Example:'''
 class A:
   def spam(self):
@@ -183,9 +218,14 @@ Result:
 Data Hiding
 
 Weakly private methods and attributes have a single underscore at the beginning.
-This signals that they are private, and shouldn't be used by external code. However, it is mostly only a convention, and does not stop external code from accessing them. 
-Its only actual effect is that from module_name import * won't import variables that start with a single underscore.
+This signals that they are private, and shouldn't be used by external code. 
+However, it is mostly only a convention, and does not stop external code from 
+accessing them. 
+Its only actual effect is that from module_name import * won't import variables
+ that start with a single underscore.
+
 Example:'''
+
 class Queue:
   def __init__(self, contents):
     self._hiddenlist = list(contents)
@@ -216,14 +256,21 @@ Queue([0, 1, 2])
 [0, 1, 2]
 >>> 
 
-In the code above, the attribute _hiddenlist is marked as private, but it can still be accessed in the outside code.
+In the code above, the attribute _hiddenlist is marked as private, but it can 
+still be accessed in the outside code.
 The __repr__ magic method is used for string representation of the instance.
 '''
 '''
 
-Strongly private methods and attributes have a double underscore at the beginning of their names. This causes their names to be mangled, which means that they can't be accessed from outside the class. 
-The purpose of this isn't to ensure that they are kept private, but to avoid bugs if there are subclasses that have methods or attributes with the same names.
-Name mangled methods can still be accessed externally, but by a different name. The method __privatemethod of class Spam could be accessed externally with _Spam__privatemethod.
+Strongly private methods and attributes have a double underscore 
+at the beginning of their names. This causes their names to be 
+mangled, which means that they can't be accessed from outside the class. 
+The purpose of this isn't to ensure that they are kept private, 
+but to avoid bugs if there are subclasses that have methods or 
+attributes with the same names.
+Name mangled methods can still be accessed externally, but by a
+ different name. The method __privatemethod of class Spam could be 
+ accessed externally with _Spam__privatemethod.
 Example:
 '''
 class Spam:
@@ -244,15 +291,20 @@ Result:
 AttributeError: 'Spam' object has no attribute '__egg'
 >>>
 
-Basically, Python protects those members by internally changing the name to include the class name.
+Basically, Python protects those members by internally 
+changing the name to include the class name.
 
 '''
 
 '''Class Methods
 
-Methods of objects we've looked at so far are called by an instance of a class, which is then passed to the self parameter of the method.
-Class methods are different - they are called by a class, which is passed to the cls parameter of the method. 
-A common use of these are factory methods, which instantiate an instance of a class, using different parameters than those usually passed to the class constructor. 
+Methods of objects we've looked at so far are called by an 
+instance of a class, which is then passed to the self parameter of the method.
+Class methods are different - they are called by a class, 
+which is passed to the cls parameter of the method. 
+A common use of these are factory methods, which instantiate
+ an instance of a class, using different parameters than those 
+ usually passed to the class constructor. 
 Class methods are marked with a classmethod decorator.
 Example:'''
 
@@ -277,15 +329,19 @@ Result:
 25
 >>>
 
-new_square is a class method and is called on the class, rather than on an instance of the class.
+new_square is a class method and is called on the class, 
+rather than on an instance of the class.
  It returns a new object of the class cls.
 
-Technically, the parameters self and cls are just conventions; they could be changed to anything else.
- However, they are universally followed, so it is wise to stick to using them.'''
+Technically, the parameters self and cls are just conventions;
+ they could be changed to anything else.
+ However, they are universally followed, so it is wise to stick 
+ to using them.'''
 
 #Static Methods
 
-#Static methods are similar to class methods, except they don't receive any additional arguments; 
+#Static methods are similar to class methods, except they don't
+# receive any additional arguments; 
 #they are identical to normal functions that belong to a class. 
 #They are marked with the staticmethod decorator.
 #Example:
@@ -305,12 +361,14 @@ ingredients = ["cheese", "onions", "spam"]
 if all(Pizza.validate_topping(i) for i in ingredients):
   pizza = Pizza(ingredients) 
 
-#Static methods behave like plain functions, except for the fact that you can call them from an instance of the class.
+#Static methods behave like plain functions, except for the fact that 
+#you can call them from an instance of the class.
 
 '''Properties
 
 Properties provide a way of customizing access to instance attributes. 
-They are created by putting the property decorator above a method, which means when the instance attribute with the same name as the method is accessed, the method will be called instead. 
+They are created by putting the property decorator above a method, 
+which means when the instance attribute with the same name as the method is accessed, the method will be called instead. 
 One common use of a property is to make an attribute read-only.
 Example:
 '''
@@ -340,7 +398,8 @@ AttributeError: can't set attribute
 Properties can also be set by defining setter/getter functions.
 The setter function sets the corresponding property's value.
 The getter gets the value.
-To define a setter, you need to use a decorator of the same name as the property, followed by a dot and the setter keyword.
+To define a setter, you need to use a decorator of the same name as 
+the property, followed by a dot and the setter keyword.
 The same applies to defining getter functions.
 '''
 class Pizza:
@@ -372,4 +431,15 @@ Result:
 False
 Enter the password: Sw0rdf1sh!
 True
+'''
+
+'''
+A class without a body throws error , so you need to put in the 
+keyword 'pass' to avoid that
+
+eg: 
+
+class MyClass:
+  pass // this will avoid giving the error 
+
 '''

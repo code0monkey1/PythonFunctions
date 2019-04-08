@@ -28,3 +28,4 @@ print(replace_the_word.replace("Chiranjeev","Aradhana"))
 
 # print("chiranjeev" in " chiranjeev is my name") // This will just retrn true 
 
+#split() , this method splits the string depending on the type of character given for split and returns a list 

@@ -364,10 +364,15 @@ print(lsm==ls)
 # This causes the sort() method to treat all the items in the list as if
 #  they were lowercase without actually changing the values in the list.
 
-# Copy and DeepCopy
+# Copy 
 
-cheese = copy.copy(spam) #n creates a second list that can be modified independently of the first.
+cheese =spam.copy() #n creates a second list that can be modified independently 
+#of the first.
 
-# If the list you need to copy contains lists, then use the
-#  copy.deepcopy() function instead of copy.copy(). The deepcopy() function 
-#  ill copy these inner lists as well.
+#pop() method can be used to pop the last item of the list every time 
+
+buck = [ 2, 3 , 4]
+
+buck.pop()
+
+print(buck) # will give [2,3] as the last element 4 is popped

@@ -31,5 +31,6 @@ for i in range ( 1, 10 ,2 ): # the third is the incremented_by value
 # --- you could even have a negative step argument 
 
 for i in range ( 5 , -1 , -1 ):
-	print(i) # prints 5 , 4 , 3 , 2 , 1, 0  
+	print(i , end=" ") # to print on the same line put end=" "
+ # prints 5 , 4 , 3 , 2 , 1, 0  
 	# decreasing one every time till it reaches -1 (and does not include -1 )

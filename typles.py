@@ -5,6 +5,8 @@ Also, they are created using parentheses, rather than square brackets.
 Example:'''
 words = ("spam", "eggs", "sausages",)
 
+#count() and index() functions are the only 2 functions that can be used 
+
 '''You can access the values in the tuple with their index, just as you did with lists:'''
 print(words[0])
 

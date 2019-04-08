@@ -52,7 +52,9 @@ True: False,
 None: "True",
 }
 
+# using the get method is the preferable approach
 print(pairs.get("orange"))
 print(pairs.get(7))
-print(pairs.get(12345, "not in dictionary"))
+print(pairs.get(12345, "not in dictionary")) # functions like default value returned
+# in java map when value not present
 
